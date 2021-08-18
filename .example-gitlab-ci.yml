@@ -1,46 +1,14 @@
 image: python:latest
 
-variables:
-  DAST_WEBSITE: "http://acebook:5000/"
-
 stages:
   - build
   - test
   - dast
   - cleanup
 
-test:
-    stage: test
-    before_script:
-      - python -V  # Print out python version for debugging
-      - python3 -m venv venv
-      - pip3 install -e .
-      - sbase install chromedriver
-      - apt-get update
-      - apt-get install chromium -y
-      - export FLASK_APP=acebook
-      - flask init-db
-    script: flask run & pytest
-
-# Deploys the container to the GitLab container registry
-deploy:
-  services:
-  - name: docker:dind
-    alias: dind
-  image: docker:19.03.5
-  stage: build
-  script:
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-    - docker pull $CI_REGISTRY_IMAGE:latest || true
-    - docker build --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA --tag $CI_REGISTRY_IMAGE:latest .
-    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-    - docker push $CI_REGISTRY_IMAGE:latest
-
-services: # use services to link your app container to the dast job
-  - name: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-    alias: acebook
-
 include:
+  - local: '/templates/.gitlab-ci-tests.yml'
+  - local: '/templates/.gitlab-ci-dast.yml'
   - template: Jobs/Build.gitlab-ci.yml  # https://gitlab.com/gitlab-org/gitlab/blob/master/lib/gitlab/ci/templates/Jobs/Build.gitlab-ci.yml
   - template: Security/Dependency-Scanning.gitlab-ci.yml  # https://gitlab.com/gitlab-org/gitlab/blob/master/lib/gitlab/ci/templates/Security/Dependency-Scanning.gitlab-ci.yml
   - template: Security/SAST.gitlab-ci.yml  # https://gitlab.com/gitlab-org/gitlab/blob/master/lib/gitlab/ci/templates/Security/SAST.gitlab-ci.yml
