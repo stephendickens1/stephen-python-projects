@@ -4,7 +4,7 @@
 
 ## What is Insecure Acebook?
 
-This project has been adapted from the [Acebook Flask Template](https://github.com/makersacademy/acebook-flask-template). It has been modified to make it more insecure now!
+This project has been adapted from the [Acebook Flask Template](https://github.com/makersacademy/acebook-flask-template). It has been modified to make it more insecure now! :raised_eyebrow: :unlock:
 
 Some of the challenges may need you to experiment with the app running locally on your machine. Please refer to the repository linked above for instructions on how to set up the project.
 
@@ -16,7 +16,7 @@ Before we start making use of the SAST and DAST tools available within GitLab CI
 The idea is for you to discuss in your teams and try to flag any potential security concerns that you may come up with.
 What can you anticipate that could go wrong if we were to deploy this application to production?
 
-Remember that the soonest we start taking security into consideration in the SLDC, the better.
+Remember that the soonest we start taking security into consideration in the SLDC, the better. :closed_lock_with_key:
 
 ## Our GitLab Pipeline
 
@@ -37,7 +37,7 @@ Downloading reports:
 
 Once it's finished, you should be able to download the different reports generated. You can find these under `CI/CD` -> `Pipelines` -> `Artifacts` (the three dots on the right from the pipeline row that just run).
 
-The different SAST-related reports should contain security concerns that have been found by the tool. Have a look at them and discuss in your teams:
+:interrobang: The different SAST-related reports should contain security concerns that have been found by the tool. Have a look at them and discuss in your teams:
 - Are these security risks real vulnerabilities within our application?
 - What could we do to mitigate the problem(s)?
 
@@ -54,7 +54,7 @@ After you commit these changes and push your code, an additional DAST stage shou
 
 When this stage is done, you should be able to download the DAST report as JSON (following the same process as in the previous section).
 
-This report should contain a list of vulnerabilities that have been found by the tool. Have a look at them and discuss in your teams:
+:interrobang: This report should contain a list of vulnerabilities that have been found by the tool. Have a look at them and discuss in your teams:
 - Are these security risks real vulnerabilities within our application?
 - What could we do to mitigate the problem(s)?
 
@@ -65,7 +65,7 @@ If you found out that you should add some security implementations to your appli
 
 ## Further comments on SAST and DAST tools
 
-We should never blindly believe all of the vulnerabilities that are highlighted. In many occassions, these do not necessarily affect our projects or can be ignored safely. However, it is important that we understand what these mean to make a conscious decision.
+:see_no_evil: We should never blindly believe all of the vulnerabilities that are highlighted. In many occassions, these do not necessarily affect our projects or can be ignored safely. However, it is important that we understand what these mean to make a conscious decision.
 
 Although these are great tools to help you assess how secure your application is before it gets deployed, **we should not only rely on them**.
 
@@ -94,10 +94,13 @@ As you have probably seen from running the SAST tools before, the application is
 
 How could an attacker exploit such vulnerability in our system? :fire:
 
-Depending on whether there's time/interest or not to find out more about this vulnerability (which can certainly be mitigated without necessarily having to reproduce it), your coach may organise a session to demonstrate how an attacker could go about bypassing the authentication system implemented in the application.
+Depending on whether there's time/interest or not to find out more about this vulnerability (which can certainly be mitigated without necessarily having to reproduce it), your coach may organise a session to demonstrate how an attacker could go about bypassing the authentication system implemented in the application. :eyes:
 
 ### Resources
+- [SAST in GitLab](https://docs.gitlab.com/ee/user/application_security/sast/)
+- [DAST in GitLab](https://docs.gitlab.com/ee/user/application_security/dast/)
 - [OWASP Top Ten](https://owasp.org/www-project-top-ten/)
 - [Cross-Site Scripting (XSS)](https://flask.palletsprojects.com/en/2.0.x/security/#security-xss)
 - [Broken Authentication](https://owasp.org/www-project-top-ten/2017/A2_2017-Broken_Authentication)
 - [Controlling Autoescaping in Flask App Templates](https://flask.palletsprojects.com/en/2.0.x/templating/#controlling-autoescaping)
+- [Flask User Guide](https://flask.palletsprojects.com/en/2.0.x/)
