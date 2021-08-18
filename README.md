@@ -78,14 +78,14 @@ By default, Flask templates autoscape special characters (e.g. HTML tags). If we
 If we do not have any sort of control of what the user may input into our application and we display such info without applying any security measures, the scenarios could be catastrophic.
 
 <details>
-    <summary markdown="span">:bulb: <b>Toggle this if you'd like some hints!</b></summary>
+  <summary markdown="span">:bulb: <b>Toggle this if you'd like some hints!</b></summary>
 
-    Are we applying autoscape in any of the templates within our application? If so, in which one?
-    Imagine the scenario where a user of our application chooses `<script>alert('You've been hacked!')</script>` as their post title. What would happen the next time we were to look at the posts feed?
+  Are we applying autoscape in any of the templates within our application? If so, in which one?
+  Imagine the scenario where a user of our application chooses `<script>alert('You've been hacked!')</script>` as their post title. What would happen the next time we were to look at the posts feed?
 
-    Executing such script would not be a disaster. However, a clever attacker could write a script that sends a request on our behalf (being logged in!) and perform any sort of malicious attack.
+  Executing such script would not be a disaster. However, a clever attacker could write a script that sends a request on our behalf (being logged in!) and perform any sort of malicious attack.
 
-    As a rule of thumb, do not set `autoscape` to false if you don't need to. This way, we get standard HTML context filtering for variables in templates. Code and tags will be skipped and transformed to strings and won't be executed anymore.
+  As a rule of thumb, do not set `autoscape` to false if you don't need to. This way, we get standard HTML context filtering for variables in templates. Code and tags will be skipped and transformed to strings and won't be executed anymore.
 </details>
 
 ## Bonus
