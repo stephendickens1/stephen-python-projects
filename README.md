@@ -4,7 +4,7 @@
 
 ## What is Insecure Acebook?
 
-This project has been adapted from the [Acebook Flask Template](https://github.com/makersacademy/acebook-flask-template). It has been modified to make it more insecure now! :raised_eyebrow: :unlock:
+This project has been adapted from the [Acebook Flask Template](https://github.com/makersacademy/acebook-flask-template). It has been modified to make it more insecure now! :expressionless: :unlock:
 
 Some of the challenges may need you to experiment with the app running locally on your machine. Please refer to the repository linked above for instructions on how to set up the project.
 
@@ -71,11 +71,15 @@ Although these are great tools to help you assess how secure your application is
 
 It is also common to find out that these tools do not find all of the real issues within our applications, and here is when our security expertise will come in really handy to complement the job that these tools carry out for us.
 
-### Did you notice that 1+ of the application templates are vulnerable to XSS attacks?
+### XSS (Cross-Site Scripting)
 
-By default, Flask templates autoscape special characters (e.g. HTML tags). If we were to disable this feature for any reasons, we should be aware of XSS (Cross-Site Scripting) attacks.
+By default, Flask templates autoscape special characters (e.g. HTML tags). If we were to disable this feature for any reasons, we should be aware of XSS attacks.
 
 If we do not have any sort of control of what the user may input into our application and we display such info without applying any security measures, the scenarios could be catastrophic.
+
+Regarding our application, did you notice that 1+ templates are vulnerable to XSS attacks?
+
+:exclamation: **Your task is to spot the template(s) that are vulnerable to XSS attack within the application and apply corrective measures.**
 
 <details>
   <summary markdown="span">:bulb: <b>Toggle this if you'd like some hints!</b></summary>
