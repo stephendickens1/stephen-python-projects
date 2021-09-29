@@ -99,6 +99,7 @@ As you have probably seen from running the SAST tools before, the application is
 
 How could an attacker exploit such vulnerability in our system? :fire:
 
+Do not worry if you don't get the time to work through this task, as you'll get another chance in further challenges happening later on this week :wink:
 
 ### Resources
 - [SAST in GitLab](https://docs.gitlab.com/ee/user/application_security/sast/)
