@@ -99,7 +99,6 @@ As you have probably seen from running the SAST tools before, the application is
 
 How could an attacker exploit such vulnerability in our system? :fire:
 
-Depending on whether there's time/interest or not to find out more about this vulnerability (which can certainly be mitigated without necessarily having to reproduce it), your coach may organise a session to demonstrate how an attacker could go about bypassing the authentication system implemented in the application. :eyes:
 
 ### Resources
 - [SAST in GitLab](https://docs.gitlab.com/ee/user/application_security/sast/)
