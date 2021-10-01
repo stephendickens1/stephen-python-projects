@@ -28,6 +28,8 @@ You will have to rename the `.example-gitlab-ci.yml` file in order for the pipel
 
 We are going to leverage the use of static and dynamic testing tools as part of our GitLab pipeline to help us identify potential vulnerabilities within our application.
 
+:tophat: Note that the aim is not to fix all of the potential vulnerabilities raised by the tools, but rather to get used to using such tools and understand what comes back from the reports.
+
 
 ### SAST
 
