@@ -11,7 +11,7 @@ Some of the challenges may need you to experiment with the app running locally o
 
 ## Getting started
 
-Before we start making use of the SAST and DAST tools available within GitLab CI/CD, we encourage you to take a look at the application codebase.
+Before we start making use of the SAST tools available within GitLab CI/CD, we encourage you to take a look at the application codebase.
 
 The idea is for you to discuss in your teams and try to flag any potential security concerns that you may come up with.
 What can you anticipate that could go wrong if we were to deploy this application to production?
@@ -46,24 +46,6 @@ Once it's finished, you should be able to download the different reports generat
 The reports contain useful information linked to each found vulnerability that should help you find a solution (if needed).
 
 If you found out that you should add some security implementations to your application to mitigate any of these, work on improving the application, push your code and analyse a new report generated from the tool.
-
-
-### DAST
-
-Once we are done with SAST, uncomment the three lines that are commented out at the moment in your `.gitlab-ci.yml` file.
-
-After you commit these changes and push your code, an additional DAST stage should appear in our GitLab pipeline.
-
-When this stage is done, you should be able to download the DAST report as JSON (following the same process as in the previous section).
-
-:interrobang: This report should contain a list of vulnerabilities that have been found by the tool. Have a look at them and discuss in your teams:
-- Are these security risks real vulnerabilities within our application?
-- What could we do to mitigate the problem(s)?
-
-The report contains useful information linked to each found vulnerability that should help you find a solution (if needed).
-
-If you found out that you should add some security implementations to your application to mitigate any of these, work on improving the application, push your code and analyse a new report generated from the tool.
-
 
 ## Further comments on SAST and DAST tools
 
