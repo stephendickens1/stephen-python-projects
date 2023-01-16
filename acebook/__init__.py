@@ -20,7 +20,10 @@ def create_app(test_config=None):
     try:
         os.makedirs(app.instance_path)
     except OSError:
+    if OSError != EEXIST:
         raise
+    else:
+        print("Directory already exists, continuing")
 
     # a simple page that says hello
     @app.route('/hello')
