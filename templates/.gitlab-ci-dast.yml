@@ -1,5 +1,8 @@
 variables:
   DAST_WEBSITE: "http://acebook:5000/"
+  DAST_FULL_SCAN: "true"
+  DAST_BROWSER_SCAN: "true"
+
 
 # Deploys the container to the GitLab container registry
 deploy:
