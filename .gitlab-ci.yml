@@ -3,14 +3,14 @@ image: python:latest
 stages:
   - build
   - test
-  # - dast
+  - dast
   - cleanup
 
 include:
   - local: '/templates/.gitlab-ci-tests.yml'
-  # - local: '/templates/.gitlab-ci-dast.yml'
+  - local: '/templates/.gitlab-ci-dast.yml'
   - template: Jobs/Build.gitlab-ci.yml
   - template: Jobs/Dependency-Scanning.gitlab-ci.yml
   - template: Jobs/SAST.gitlab-ci.yml
   - template: Jobs/Secret-Detection.gitlab-ci.yml
-  # - template: Security/DAST.gitlab-ci.yml
+  - template: Security/DAST.gitlab-ci.yml
