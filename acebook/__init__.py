@@ -20,7 +20,7 @@ def create_app(test_config=None):
     try:
         os.makedirs(app.instance_path)
     except OSError:
-        if OSError != EEXIST:
+        if OSError != OSError.EEXIST:
             raise
         else:
             print("Directory already exists, continuing")
