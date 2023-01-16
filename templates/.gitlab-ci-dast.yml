@@ -18,6 +18,7 @@ deploy:
     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
     - docker push $CI_REGISTRY_IMAGE:latest
 
-services: # use services to link your app container to the dast job
-  - name: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-    alias: acebook
+dast:
+  services: # use services to link your app container to the dast job
+    - name: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+      alias: acebook
