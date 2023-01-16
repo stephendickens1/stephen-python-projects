@@ -19,11 +19,8 @@ def create_app(test_config=None):
     # ensure the instance folder exists
     try:
         os.makedirs(app.instance_path)
-    except OSError as error_no:
-        if error_no.errno != 17:
-            raise
-        else:
-            print("Directory already exists, continuing")
+    except FileExistsError:
+        print("Directory already exists, continuing")
 
     # a simple page that says hello
     @app.route('/hello')
